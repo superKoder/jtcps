@@ -20,14 +20,14 @@ All CPS1 and CPS1.5 operate correctly on a 32MB SDRAM system. Some CPS2 games ma
 
 MiSTer allows for gamepad redifinition. However, the keyboard can be used with more or less the same layout as MAME for MiST(er) platforms. Some important keys:
 
--F12 OSD menu
--P   Pause. Press 1P during pause to toggle the credits on and off
--5,6 1P coin, 2P coin
--1,2 1P, 2P
+-F12 OSD menu  
+-P   Pause. Press 1P during pause to toggle the credits on and off  
+-5,6 1P coin, 2P coin  
+-1,2 1P, 2P  
 
 For MiST, the first 6 gamepad buttons are used for game buttons, the next 2 buttons are used for credit and start buttons. If there is still one button left in the gamepad, it will be used for pause.
 
-There is an option to slow down the game (available only for CPS2). If you enable the 1P_hold_for_slow setting on the OSD, then while the 1P button is held the game will run at half the speed. Release the 1P button to go back to normal speed or disable the option in the OSD. Note that if the option is enabled the 2P, 3P and 4P buttons will also activate the slow down effect.
+There is an option to slow down the game (available only for CPS2). If you enable the `1P_hold_for_slow` setting on the OSD, then while the 1P button is held the game will run at half the speed. Release the 1P button to go back to normal speed or disable the option in the OSD. Note that if the option is enabled the 2P, 3P and 4P buttons will also activate the slow down effect.
 
 # Setup
 
@@ -43,9 +43,11 @@ The _rotate screen_ OSD option is ignored for horizontal games.
 
 You need to generate the .rom file using this (tool)[https://github.com/sebdel/mra-tools-c/tree/master/release]. Basically call it like this:
 
-`mra ghouls.mra -z rompath -A`
+```
+mra ghouls.mra -z rompath -A
+```
 
-And that will produce the .rom file and a .arc file. The .arc file can be used to start the core and directly load the game rom file. Note that the RBF name must be JTCPS1.RBF for it to work. The three files must be in the root folder.
+And that will produce the .rom file and a .arc file. The .arc file can be used to start the core and directly load the game rom file. Note that the RBF name must be `JTCPS1.RBF` for it to work. The three files must be in the root folder.
 
 *Important*: make sure to have the latest firmware and latest version of the mra tool.
 
@@ -53,7 +55,7 @@ Copy the RBF, .arc and .rom files to MiST and enjoy!
 
 Note that there is no screen rotation in MiST. Vertical games require you to turn your screen around. You can however flip the image through the OSD.
 
-Pang! 3 and all CPS 1.5/2 games did not use DIP switches to configure the game, but a small non-volatile RAM. You have to enter the test menu to configure it (via OSD). After you have configured the settings, save the contents using the OSD option *Save NVRAM*. A file will be created at the root of your SD card called game.RAM, where game will match the name of the .ROM file used with the game.
+_Pang! 3_ and all CPS 1.5/2 games did not use DIP switches to configure the game, but a small non-volatile RAM. You have to enter the test menu to configure it (via OSD). After you have configured the settings, save the contents using the OSD option *Save NVRAM*. A file will be created at the root of your SD card called `game.RAM`, where game will match the name of the .ROM file used with the game.
 
 # Issues
 
@@ -84,7 +86,7 @@ T  = 1/4Fs
 
 # QSound
 
-QSound requires its own firmware rom to work. In MAME this is called qsound.zip. QSound sampling frequency is 3746 ticks of the input clock, when the clock enable applied is 2/3. For a 90MHz input clock, this will result in the correct internal 30MHz and in a sampling frequency of 90MHz/3747=24,019.2Hz
+QSound requires its own firmware rom to work. In MAME this is called `qsound.zip`. QSound sampling frequency is 3746 ticks of the input clock, when the clock enable applied is 2/3. For a 90MHz input clock, this will result in the correct internal 30MHz and in a sampling frequency of 90MHz/3747=24,019.2Hz
 
 The original board had a digitally controlled amplifier. The volume set on this amplifier could be read back by the CPU and DSP. In order to control the value read by these devices, press and hold the coin button for 1P while pressing up or down (for more or less volume). Note that this does not have an actual effect on the sound output.
 
@@ -98,7 +100,7 @@ jedutil -view wl24b.1a gal16v8
 In order to see the PAL equations for _Willow_.
 
 # Compilation
-The core is compiled using jtcore from **JTFRAME**. Follow the instructions in the README file of (JTFRAME)[https://github.com/jotego/jtframe] and then:
+The core is compiled using `jtcore` from **JTFRAME**. Follow the instructions in the README file of (JTFRAME)[https://github.com/jotego/jtframe] and then:
 
 ```
 source setprj.sh
@@ -227,9 +229,9 @@ X-Men vs SF            | 3.5 MB  |  256 kB     | 32 MB   | 4 MB    | 7080   |  N
 
 ## Game
 1. Generate a rom file using the MRA tool
-2. Update the symbolic link rom.bin in ver/game to point to it
-3. If all goes well, `go.sh` should update the sdram.hex file
-   But if sdram.hex is a symbolic link to something else it might
+2. Update the symbolic link `rom.bin` in `ver/game` to point to it
+3. If all goes well, `go.sh` should update the `sdram.hex` file
+   But if `sdram.hex` is a symbolic link to something else it might
    fail. You can delete sdram.hex first so it gets recreated
 
    `go.sh` will fill up sdram.hex with zeros in order to avoid x's in
@@ -244,10 +246,10 @@ X-Men vs SF            | 3.5 MB  |  256 kB     | 32 MB   | 4 MB    | 7080   |  N
 
 Some Verilog macros:
 
-1. FORCE_GRAY ignore palette and use a 4-bit gray scale for everything
-2. REPORT_DELAY will print the average CPU delay at the end of each frame
+1. `FORCE_GRAY` ignore palette and use a 4-bit gray scale for everything
+2. `REPORT_DELAY` will print the average CPU delay at the end of each frame
    in system ticks (number of 48MHz clocks)
-3. JTCPS_TURBO forces turbo mode, speeding up -slightly- the game speed, especially on boot-up
+3. `JTCPS_TURBO` forces turbo mode, speeding up -slightly- the game speed, especially on boot-up
 
 ## Video
 
@@ -260,9 +262,7 @@ the other files too. Now you run go.sh like this:
 go.sh -g game -s number -frame 2
 ```
 
-This will run the simulation for the folder *game* and looking for files with the *number* index. If you
- need to look at the sprites too, you need to run more than one frame as the object DMA needs a frame to
- fill in the data.
+This will run the simulation for the folder *game* and looking for files with the *number* index. If you need to look at the sprites too, you need to run more than one frame as the object DMA needs a frame to fill in the data.
 
 # Support
 
