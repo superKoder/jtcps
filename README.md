@@ -89,13 +89,13 @@ QSound requires its own firmware rom to work. In MAME this is called qsound.zip.
 The original board had a digitally controlled amplifier. The volume set on this amplifier could be read back by the CPU and DSP. In order to control the value read by these devices, press and hold the coin button for 1P while pressing up or down (for more or less volume). Note that this does not have an actual effect on the sound output.
 
 # PAL Dumps
-PAL dumps cam be obtained from MAME rom sets directly. Use the tool jedutil in order to extract the equations from them. The device is usually a gal16v8. For instance:
+PAL dumps can be obtained from MAME rom sets directly. Use the tool `jedutil` in order to extract the equations from them. The device is usually a `gal16v8`. For instance:
 
 ```
 jedutil -view wl24b.1a gal16v8
 ```
 
-In order to see the equations for Willow's PAL.
+In order to see the PAL equations for _Willow_.
 
 # Compilation
 The core is compiled using jtcore from **JTFRAME**. Follow the instructions in the README file of (JTFRAME)[https://github.com/jotego/jtframe] and then:
@@ -181,47 +181,47 @@ Muscle Bomber Duo     | 2.0 MB  |  128 kB     | 6 MB    | 4 MB    |
 It looks like the 16kB memory add-on is not used for regular games. Maybe it is used for
 network connectivity only.
 
-Game                  | CPU     |   Z80       | GFX     | Q-Sound |Obj base| Addon | Popularity
-----------------------|---------|-------------|---------|---------|--------|-------|------------
-19XX                  | 2.5 MB  |  128 kB     | 10 MB   | 4 MB    | 7080   |  No   | 191
-1944                  | 1.5 MB  |  128 kB     | 20 MB   | 8 MB    | 7080   |  No   | 161
-Alien vs Predator     | 2.0 MB  |  128 kB     | 16 MB   | 4 MB    | 7000   |  No   | 637
-Armored Warriors      | 4.0 MB  |  256 kB     | 20 MB   | 4 MB    | 7000   |  No   | 278
-Battle Circuit        | 3.5 MB  |  256 kB     | 16 MB   | 4 MB    | 7080   |  No   |  87
-Capcom Sports Club    | 2.5 MB  |  128 kB     |  8 MB   | 4 MB    | 7080   |  No   |  20
-Cyberbots             | 4.0 MB  |  256 kB     | 32 MB   | 4 MB    | 7080   |  No   | 141
-Darkstalkers          | 4.0 MB  |  256 kB     | 20 MB   | 4 MB    | 7080   |       | 146
-Dimahoo               | 2.0 MB  |  256 kB     | 16 MB   | 8 MB    | 7080   |  No   |  32
-DnD Shadow o. Mystara | 4.0 MB  |  256 kB     | 24 MB   | 4 MB    | 7080   |  No   | 336
-DnD Tower of Doom     | 2.5 MB  |  128 kB     | 12 MB   | 4 MB    | 7080   |  No   | 108
-Eco Fighters          | 2.0 MB  |  128 kB     | 12 MB   | 4 MB    | 7000   |       |  64
-Giga Wing             | 1.5 MB  |  128 kB     | 16 MB   | 8 MB    | 7080   |       |  66
-Hyper SF II           | 4.0 MB  |  256 kB     | 32 MB   | 8 MB    | 7080   |       | 171
-Janpai                | 1.0 MB  |  128 kB     | 16 MB   | 4 MB    | 7000   |       |  15
-Jyangokushi           | 0.5 MB  |  128 kB     | 16 MB   | 4 MB    |        |       |   1
-Mars Matrix           | 1.5 MB  |  128 kB     | 32 MB   | 8 MB    |        |  No   |  57
-Marvel Super Heroes   | 4.0 MB  |  256 kB     | 32 MB   | 4 MB    |        |       | 165
-Marvel vs SF          | 4.0 MB  |  256 kB     | 32 MB   | 8 MB    |        |       | 336
-Marvel vs CAPCOM      | 4.0 MB  |  256 kB     | 32 MB   | 8 MB    |        |       | 377
-Megaman 2             | 1.5 MB  |  256 kB     |  8 MB   | 4 MB    |        |       | 225
-Darkstalker's revenge | 4.0 MB  |  256 kB     | 32 MB   | 4 MB    |        |       |  54
-Progear               | 1.0 MB  |  128 kB     | 16 MB   | 8 MB    | 7080   |  No   |  72
-Puzz Loop 2           | 2.0 MB  |  128 kB     | 16 MB   | 4 MB    | 7000   |       |  16
-Quiz Nanairo Dreams   | 2.0 MB  |  128 kB     |  8 MB   | 4 MB    |        |       |   8
-Ring of Destruction   | 3.0 MB  |  256 kB     | 18 MB   | 4 MB    |        |       | 293
-Slam Masters 2        | 3.0 MB  |  256 kB     | 18 MB   | 4 MB    |        |       | 291
-SF alpha 1            | 2.0 MB  |  256 kB     |  8 MB   | 4 MB    | 7000   |       | 190
-SF alpha 2            | 3.0 MB  |  256 kB     | 20 MB   | 4 MB    | 7000   |       | 218
-SF alpha 3            | 4.0 MB  |  256 kB     | 32 MB   | 8 MB    | 7000   |       | 456
-SF zero 2 alpha       | 3.0 MB  |  256 kB     | 20 MB   | 4 MB    | 7000   |       | 293
-Super Gem Fighter     | 2.5 MB  |  256 kB     | 20 MB   | 8 MB    |        |       | 252
-Super Puzzle Fighter 2| 1.0 MB  |  256 kB     |  4 MB   | 4 MB    | 7000   |       | 210
-SF2 New Challengers   | 2.5 MB  |  128 kB     | 12 MB   | 4 MB    | 7080   |  No   | 135
-SF2 Turbo             | 3.5 MB  |  256 kB     | 16 MB   | 4 MB    | 7080   |       |1200
-Vampire Savior 1      | 4.0 MB  |  256 kB     | 32 MB   | 8 MB    |        |       |  30
-Vampire Savior 2      | 4.0 MB  |  256 kB     | 32 MB   | 8 MB    |        |       |  26
-X-Men Children of A.  | 4.0 MB  |  256 kB     | 32 MB   | 4 MB    | 7080   |  No   | 179
-X-Men vs SF           | 3.5 MB  |  256 kB     | 32 MB   | 4 MB    | 7080   |  No   | 337
+Game                   | CPU     |   Z80       | GFX     | Q-Sound |Obj base| Addon | Popularity
+-----------------------|---------|-------------|---------|---------|--------|-------|------------
+19XX                   | 2.5 MB  |  128 kB     | 10 MB   | 4 MB    | 7080   |  No   | 191
+1944                   | 1.5 MB  |  128 kB     | 20 MB   | 8 MB    | 7080   |  No   | 161
+Alien vs Predator      | 2.0 MB  |  128 kB     | 16 MB   | 4 MB    | 7000   |  No   | 637
+Armored Warriors       | 4.0 MB  |  256 kB     | 20 MB   | 4 MB    | 7000   |  No   | 278
+Battle Circuit         | 3.5 MB  |  256 kB     | 16 MB   | 4 MB    | 7080   |  No   |  87
+Capcom Sports Club     | 2.5 MB  |  128 kB     |  8 MB   | 4 MB    | 7080   |  No   |  20
+Cyberbots              | 4.0 MB  |  256 kB     | 32 MB   | 4 MB    | 7080   |  No   | 141
+Darkstalkers           | 4.0 MB  |  256 kB     | 20 MB   | 4 MB    | 7080   |       | 146
+Dimahoo                | 2.0 MB  |  256 kB     | 16 MB   | 8 MB    | 7080   |  No   |  32
+DnD Shadow o. Mystara  | 4.0 MB  |  256 kB     | 24 MB   | 4 MB    | 7080   |  No   | 336
+DnD Tower of Doom      | 2.5 MB  |  128 kB     | 12 MB   | 4 MB    | 7080   |  No   | 108
+Eco Fighters           | 2.0 MB  |  128 kB     | 12 MB   | 4 MB    | 7000   |       |  64
+Giga Wing              | 1.5 MB  |  128 kB     | 16 MB   | 8 MB    | 7080   |       |  66
+Hyper SF II            | 4.0 MB  |  256 kB     | 32 MB   | 8 MB    | 7080   |       | 171
+Janpai                 | 1.0 MB  |  128 kB     | 16 MB   | 4 MB    | 7000   |       |  15
+Jyangokushi            | 0.5 MB  |  128 kB     | 16 MB   | 4 MB    |        |       |   1
+Mars Matrix            | 1.5 MB  |  128 kB     | 32 MB   | 8 MB    |        |  No   |  57
+Marvel Super Heroes    | 4.0 MB  |  256 kB     | 32 MB   | 4 MB    |        |       | 165
+Marvel vs SF           | 4.0 MB  |  256 kB     | 32 MB   | 8 MB    |        |       | 336
+Marvel vs CAPCOM       | 4.0 MB  |  256 kB     | 32 MB   | 8 MB    |        |       | 377
+Megaman 2              | 1.5 MB  |  256 kB     |  8 MB   | 4 MB    |        |       | 225
+Darkstalker's revenge  | 4.0 MB  |  256 kB     | 32 MB   | 4 MB    |        |       |  54
+Progear                | 1.0 MB  |  128 kB     | 16 MB   | 8 MB    | 7080   |  No   |  72
+Puzz Loop 2            | 2.0 MB  |  128 kB     | 16 MB   | 4 MB    | 7000   |       |  16
+Quiz Nanairo Dreams    | 2.0 MB  |  128 kB     |  8 MB   | 4 MB    |        |       |   8
+Ring of Destruction    | 3.0 MB  |  256 kB     | 18 MB   | 4 MB    |        |       | 293
+Slam Masters 2         | 3.0 MB  |  256 kB     | 18 MB   | 4 MB    |        |       | 291
+SF Alpha 1             | 2.0 MB  |  256 kB     |  8 MB   | 4 MB    | 7000   |       | 190
+SF Alpha 2             | 3.0 MB  |  256 kB     | 20 MB   | 4 MB    | 7000   |       | 218
+SF Alpha 3             | 4.0 MB  |  256 kB     | 32 MB   | 8 MB    | 7000   |       | 456
+SF Zero 2 Alpha        | 3.0 MB  |  256 kB     | 20 MB   | 4 MB    | 7000   |       | 293
+Super Gem Fighter      | 2.5 MB  |  256 kB     | 20 MB   | 8 MB    |        |       | 252
+Super Puzzle Fighter 2 | 1.0 MB  |  256 kB     |  4 MB   | 4 MB    | 7000   |       | 210
+SSF2 New Challengers   | 2.5 MB  |  128 kB     | 12 MB   | 4 MB    | 7080   |  No   | 135
+SSF2 Turbo             | 3.5 MB  |  256 kB     | 16 MB   | 4 MB    | 7080   |       |1200
+Vampire Savior 1       | 4.0 MB  |  256 kB     | 32 MB   | 8 MB    |        |       |  30
+Vampire Savior 2       | 4.0 MB  |  256 kB     | 32 MB   | 8 MB    |        |       |  26
+X-Men Children of A.   | 4.0 MB  |  256 kB     | 32 MB   | 4 MB    | 7080   |  No   | 179
+X-Men vs SF            | 3.5 MB  |  256 kB     | 32 MB   | 4 MB    | 7080   |  No   | 337
 
 # Simulation
 
